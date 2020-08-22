@@ -1,0 +1,296 @@
+@font-face {
+    font-family: marcellus_scregular;
+    src: url(../lib/font/marcellussc-regular-webfont.woff2);
+}
+* {
+    margin: 0;
+    padding: 0;
+    font-family: marcellus_scregular,serif;
+    text-shadow: 0 0 15px rgba(0,0,0,.55);
+}
+
+html,
+body {
+	margin: 0;
+    padding: 0;
+}
+body {
+	background-repeat: no-repeat;
+    background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	overflow: hidden;
+	font-family: 'Quicksand', sans-serif;
+	color: #fff;
+	font-size: 20px;
+}
+a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 11px;
+}
+#background {
+    background-image: url(../lib/image/animeboy.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+/* .bg {
+	position: fixed;
+	top: 0;
+	height: 120vh;
+	width: 120vw;
+	background-image: url('https://source.unsplash.com/random/600x250/?landscape');
+	background-image: url(image/animeboy.jpg);
+	background-size: cover;
+	filter: blur(20px);
+} */
+
+/* .color {
+	position: fixed;
+ 	height: 120vh;
+ 	width: 120vw;
+ 	top: 0;
+	left: 0;
+	background-color: #0007;
+} */
+
+.player {
+	position: fixed;
+	top: 27vh;
+	text-align: center;
+	/* background-image: url('https://source.unsplash.com/random/600x250/?landscape');
+	background-size: cover;
+	background-position: center; */
+	/* box-shadow: 0px 10px 40px -15px rgba(0,0,0,0.75); */
+}
+
+.player h1 {
+    font-size: 80px;
+    line-height: 80px;
+    padding-top: 50px;
+	text-transform: capitalize;
+	margin-bottom: 15px;
+}
+
+/* @media (max-width : 700px) {
+	.player {
+		width: 80vw;
+		height: 170px;
+	}
+}
+
+@media (max-width : 576px) {
+	.player {
+		height: 150px;
+	}
+} */
+
+.layer {
+	width: 450px;
+	height: 200px;
+	border-radius: 15px;
+	text-align: center;
+	border-radius: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+}
+
+button {
+	display: none;
+}
+
+.player button {
+	position: relative;
+	width: 56px;
+	background-color: #0000;
+	border: none;
+	bottom: 10px;
+	opacity: 0.7;
+	margin: 0 30px 0;
+	outline: none;
+	border-radius: 50px;
+	transition: all 0.5s;
+}
+.player .playM{
+	border-radius: 50%;
+	animation: animate 5s linear infinite;
+	cursor: pointer
+}
+.player .pauseM{
+	border-radius: 50%;
+	animation: animate 5s linear 1;
+	cursor: pointer;
+}
+@keyframes animate {
+	0% {
+		box-shadow: 0 0 0 0 rgba(255, 255, 255, .15)
+	}
+	40% {
+		box-shadow: 0 0 0 100px transparent
+	}
+	80% {
+		box-shadow: 0 0 0 100px transparent
+	}
+	100% {
+		box-shadow: 0 0 0 transparent
+	}
+}
+.player button:hover {
+	opacity: 1;
+}
+
+.player .layer div:nth-child(1) button,
+.player .layer div:nth-child(3) button {
+	width: 40px;
+	margin-bottom: 8px;
+}
+
+.player .layer .btn-prev:active {
+	transform: translateX(-5px);
+}
+.player .layer .btn-next:active {
+	transform: translateX(5px);
+}
+
+
+.layer img {
+	width: 100%;
+	filter: invert(99%) sepia(1%) saturate(2%) hue-rotate(227deg) brightness(107%) contrast(101%);
+}
+
+.player .repeat .btn-repeat {
+	position: absolute;
+	opacity: 0.3;
+	margin: 0;
+	top: 0;
+	right: 30px;
+	height: 56px;
+}
+
+.player .repeat .btn-repeat img {
+	width: 60%;
+}
+
+@media (max-width: 576px) {
+	.player .repeat .btn-repeat {
+		right: 15px;
+	}
+}
+
+.player .title {
+	font-size: 19px;
+	position: absolute;
+	top: 17px;
+	width: 65%;
+	text-align: center;
+	color: #f9f9f9;
+	box-sizing: border-box;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	opacity: 0.95;
+}
+
+.switch {
+	position: fixed;
+	bottom: 20px;
+	left: 20px;
+	z-index: 999;
+}
+.switch button {
+	display: none;
+	box-sizing: border-box;
+	height: 45px;
+	width: 45px;
+	background-color: #0000;
+	border: none;
+	bottom: 10px;
+	outline: none;
+	transition: all 0.3s;
+	border-radius: 50px;
+	box-shadow: none;
+}
+
+.switch button img {
+	width: 80%;
+	opacity: 0.8;
+	filter: invert(99%) sepia(1%) saturate(2%) hue-rotate(227deg) brightness(107%) contrast(101%);
+	transition: all 0.4s;
+}
+
+.switch button:hover {
+	opacity: 0;
+
+}
+.switch button:hover img {
+	opacity: 0.9;
+	filter: none;
+}
+
+.switch:hover + div {
+	opacity: 1;
+	transform: translateY(-3px);
+}
+.form:hover {
+	opacity: 1;
+	transform: translateY(-3px);
+}
+
+.form {
+	display: none;
+	opacity: 0;
+	position: fixed;
+	bottom: -10px;
+	left: 20px;
+	padding: 30px 20px 30px 0;
+	transition: all 0.7s;
+	z-index: 999;
+}
+
+.form .input {
+	outline: none;
+	padding-left: 15px;
+	border: none;
+	border-radius: 15px;
+	width: 300px;
+	height: 35px;
+	margin-right: 15px;
+}
+
+.form .ok {
+	display: block;
+	background-color: #0000;
+	border: none;
+	outline: none;
+	transition: all 0.5s;
+}
+
+.form .ok img {
+	width: 40px;
+	filter: invert(100%) sepia(5%) saturate(0%) hue-rotate(6deg) brightness(104%) contrast(102%);
+}
+
+.form .ok:hover img {
+	filter: invert(52%) sepia(99%) saturate(7%) hue-rotate(360deg) brightness(102%) contrast(107%);
+}
+
+.form .ok:active img {
+	transform: translateY(3px);
+}
+
+@media (max-width : 576px) {
+	.form .input {
+		width: 70vw;
+	}
+	.player {
+		top: 10vh;
+	}
+}
